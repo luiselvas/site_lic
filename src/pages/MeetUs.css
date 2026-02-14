@@ -1,0 +1,182 @@
+.meet-header {
+    margin-bottom: 3rem;
+}
+
+.year-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 1rem;
+}
+
+.year-tab {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.year-tab:hover {
+    color: var(--color-primary);
+}
+
+.year-tab.active {
+    color: var(--color-primary);
+}
+
+.year-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    /* Align with border-bottom of container */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Class Photo Styles */
+.class-photo-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto 4rem;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    /* Fixes potential inline-block issues */
+    flex-direction: column;
+}
+
+.class-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.class-photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    padding: 3rem 1rem 1.5rem;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.class-photo-caption h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.ambassadors-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.ambassadors-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    margin: 1rem auto 0;
+    border-radius: 4px;
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+.student-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    border-color: transparent;
+}
+
+.student-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: white;
+    margin: -4.5rem auto 1.5rem;
+    /* Pull avatar up out of card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.student-avatar svg {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+}
+
+.student-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+.student-year {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    background-color: var(--color-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+}
+
+.student-bio {
+    font-size: 0.95rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    font-weight: 400;
+}

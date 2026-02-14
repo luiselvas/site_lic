@@ -1,0 +1,106 @@
+.footer {
+    background-color: var(--color-gray-100);
+    border-top: 1px solid var(--color-gray-200);
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Increased min-width to reduce wrapping */
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.footer-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+.footer-text {
+    color: var(--color-gray-700);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    text-align: justify;
+    /* Consistent block alignment */
+    hyphens: auto;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    /* Center icon with text vertically */
+    gap: 0.5rem;
+    color: var(--color-gray-700);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    /* Add specific spacing */
+    padding-left: 0;
+    /* Ensure no padding throws off alignment */
+    transition: color 0.2s ease;
+}
+
+.footer-contact:hover {
+    color: var(--color-primary);
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-gray-700);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    text-decoration: none;
+    /* Ensure no underline by default */
+}
+
+.footer-link:hover {
+    color: var(--color-primary);
+    transform: translateX(3px);
+    transition: all 0.2s ease;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.social-link:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-gray-200);
+    color: var(--color-gray-700);
+    font-size: 0.85rem;
+}

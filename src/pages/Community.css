@@ -1,0 +1,93 @@
+.community-page {
+    background-color: var(--color-bg-light);
+    min-height: 80vh;
+}
+
+.community-header {
+    margin-bottom: 4rem;
+}
+
+.social-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    background: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon-wrapper {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--color-gray-100);
+    transition: all 0.3s ease;
+}
+
+.social-card-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+.social-card-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    transition: color 0.2s ease;
+}
+
+/* Brand Colors on Hover */
+
+/* Instagram */
+.instagram-card:hover .social-icon-wrapper {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+.instagram-card:hover .social-card-cta {
+    color: #db2e64;
+}
+
+/* LinkedIn */
+.linkedin-card:hover .social-icon-wrapper {
+    background-color: #0077b5;
+    color: white;
+}
+
+.linkedin-card:hover .social-card-cta {
+    color: #0077b5;
+}
+
+/* TikTok */
+.tiktok-card:hover .social-icon-wrapper {
+    background-color: #000000;
+    color: white;
+}
+
+.tiktok-card:hover .social-card-cta {
+    color: #000000;
+}
