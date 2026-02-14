@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Globe, Menu, X } from 'lucide-react';
 import './Navbar.css';
+import logoPt from '../assets/logo-pt-black.png';
+import logoEn from '../assets/logo-en-black.png';
 
 const Navbar = () => {
     const { t, language, toggleLanguage } = useLanguage();
@@ -16,7 +18,7 @@ const Navbar = () => {
             <div className="container navbar-container">
                 <Link to="/" className="navbar-logo">
                     <img
-                        src={language === 'pt' ? '/src/assets/logo-pt-black.png' : '/src/assets/logo-en-black.png'}
+                        src={language === 'pt' ? logoPt : logoEn}
                         alt="Iscte - Digital Tech & Health"
                         className="logo-image"
                     />

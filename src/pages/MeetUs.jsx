@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { GraduationCap, User } from 'lucide-react';
 import './MeetUs.css';
+import classPhoto from '../assets/class-photo.png';
 
 const MeetUs = () => {
     const { t } = useLanguage();
@@ -44,7 +45,7 @@ const MeetUs = () => {
 
                 {/* Class Photo Section */}
                 <div className="class-photo-container">
-                    <img src="/src/assets/class-photo.png" alt={`Class of Year ${year}`} className="class-photo" />
+                    <img src={classPhoto} alt={`Class of Year ${year}`} className="class-photo" />
                     <div className="class-photo-caption">
                         <h3>{t.meetUs.year1.replace('1', year)} {t.yearClass || "Class"}</h3>
                     </div>

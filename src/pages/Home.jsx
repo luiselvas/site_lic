@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, CheckCircle, Zap, Quote } from 'lucide-react';
 import SocialGrid from '../components/SocialGrid';
 import './Home.css';
+import heroBg from '../assets/hero-bg.png';
 
 const Home = () => {
     const { t } = useLanguage();
@@ -26,7 +27,7 @@ const Home = () => {
                     </div>
                     <div className="hero-visual">
                         <div className="hero-image-container">
-                            <img src="/src/assets/hero-bg.png" alt="Digital Health Students" className="hero-image" />
+                            <img src={heroBg} alt="Digital Health Students" className="hero-image" />
                         </div>
                     </div>
                 </div>
