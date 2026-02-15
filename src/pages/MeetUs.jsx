@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { GraduationCap, User, Calendar } from 'lucide-react';
+import { GraduationCap, User, Calendar, ChevronDown } from 'lucide-react';
 import './MeetUs.css';
 import { students } from '../data/students';
 
@@ -15,6 +15,26 @@ const MeetUs = () => {
     }, []);
 
     const [lectiveYear, setLectiveYear] = useState(availableLectiveYears[0] || "");
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+
+    const selectYear = (ly) => {
+        setLectiveYear(ly);
+        setIsDropdownOpen(false);
+    };
 
     // Dynamically resolve the class photo path based on filters
     const classPhoto = useMemo(() => {
@@ -38,21 +58,30 @@ const MeetUs = () => {
                     <h1 className="section-title">{t.meetUs.title}</h1>
 
                     <div className="filters-container">
-                        <div className="lective-year-filter">
-                            <label htmlFor="lective-year-select">
+                        <div className="lective-year-filter-wrapper" ref={dropdownRef}>
+                            <div className="filter-label">
                                 <Calendar size={18} />
                                 {t.meetUs.academicYear}:
-                            </label>
-                            <select
-                                id="lective-year-select"
-                                value={lectiveYear}
-                                onChange={(e) => setLectiveYear(e.target.value)}
-                                className="lective-year-select"
-                            >
-                                {availableLectiveYears.map(ly => (
-                                    <option key={ly} value={ly}>{ly}</option>
-                                ))}
-                            </select>
+                            </div>
+                            <div className={`smart-dropdown ${isDropdownOpen ? 'open' : ''}`}>
+                                <div className="dropdown-trigger" onClick={toggleDropdown}>
+                                    <span>{lectiveYear}</span>
+                                    <ChevronDown size={18} className="chevron" />
+                                </div>
+                                {isDropdownOpen && (
+                                    <div className="dropdown-options">
+                                        {availableLectiveYears.map(ly => (
+                                            <div
+                                                key={ly}
+                                                className={`dropdown-option ${lectiveYear === ly ? 'active' : ''}`}
+                                                onClick={() => selectYear(ly)}
+                                            >
+                                                {ly}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         <div className="year-tabs">
