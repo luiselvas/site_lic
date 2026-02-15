@@ -9,10 +9,16 @@ import MeetUs from './pages/MeetUs';
 import Community from './pages/Community';
 import './index.css';
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
+  // Use basename only on GitHub Pages
+  const basename = import.meta.env.PROD && !window.location.host.includes('vercel') ? '/site_lic' : '';
+
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename={basename}>
+        <ScrollToTop />
         <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           <Navbar />
           <main style={{ flex: 1 }}>
