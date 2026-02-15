@@ -22,6 +22,30 @@ To launch the website locally, follow these steps:
 
 ---
 
+## Content Management 📁
+
+The website is built to be easily updated without touching any complex code.
+
+### 1. Students & Ambassadors
+- Data is managed in: [students.js](file:///Users/luiselvas/Documents/site_lic/src/data/students.js)
+- Ambassadors are current representatives. Add them to the `students` array:
+  ```javascript
+  { id: 11, name: "Name", year: 1, bio: "Bio..." }
+  ```
+- No `lectiveYear` is needed for students; they will appear for their specific enrollment year (1, 2, or 3) regardless of which historical photo is being viewed.
+
+### 2. New Academic Years
+- **Media**: Create a folder in `src/assets/academic-years/` (e.g., `2025-2026`).
+- **Structure**: Add subfolders `year-1`, `year-2`, and `year-3`, each containing a `class-photo.png`.
+- **Activation**: Add the new year string (e.g., `"2025/2026"`) to the `academicYears` array in `students.js`.
+
+### 3. Website Text & Projects
+- All text and translations are in: [content.js](file:///Users/luiselvas/Documents/site_lic/src/data/content.js)
+- Update the `pt` (Portuguese) and `en` (English) objects to change any text, including the Project filters and descriptions.
+
+---
+
+
 ## Technical Details
 
 Currently, two official plugins are available:

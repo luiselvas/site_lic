@@ -2,17 +2,14 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { GraduationCap, User, Calendar, ChevronDown } from 'lucide-react';
 import './MeetUs.css';
-import { students } from '../data/students';
+import { students, academicYears } from '../data/students';
 
 const MeetUs = () => {
     const { t } = useLanguage();
     const [year, setYear] = useState(1);
 
-    // Get unique lective years from data and sort them (newest first)
-    const availableLectiveYears = useMemo(() => {
-        const years = [...new Set(students.map(s => s.lectiveYear))];
-        return years.sort((a, b) => b.localeCompare(a));
-    }, []);
+    // Use the explicit list of available years
+    const availableLectiveYears = academicYears;
 
     const [lectiveYear, setLectiveYear] = useState(availableLectiveYears[0] || "");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -48,8 +45,9 @@ const MeetUs = () => {
     }, [lectiveYear, year]);
 
     const filteredStudents = useMemo(() => {
-        return students.filter(s => s.year === year && s.lectiveYear === lectiveYear);
-    }, [year, lectiveYear]);
+        // Now only filters by course year (1, 2, 3)
+        return students.filter(s => s.year === year);
+    }, [year]);
 
     return (
         <div className="meet-us-page section p-fade-in">
