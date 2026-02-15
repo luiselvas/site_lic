@@ -110,21 +110,7 @@ const MeetUs = () => {
                 <div className="students-grid">
                     {filteredStudents.length > 0 ? (
                         filteredStudents.map(student => (
-                            <div key={student.id} className="student-card">
-                                <div className="student-avatar">
-                                    <User size={40} color="var(--color-primary)" />
-                                </div>
-                                <h3 className="student-name">{student.name}</h3>
-                                <span className="student-year">{t.meetUs[`year${student.year}`]} Ambassador</span>
-                                <p className="student-bio">{student.bio}</p>
-
-                                {student.email && (
-                                    <a href={`mailto:${student.email}`} className="student-contact-btn">
-                                        <Mail size={16} />
-                                        {t.pt ? "Contactar" : "Contact"}
-                                    </a>
-                                )}
-                            </div>
+                            <AmbassadorCard key={student.id} student={student} t={t} />
                         ))
                     ) : (
                         <div className="no-students">
@@ -133,6 +119,47 @@ const MeetUs = () => {
                     )}
                 </div>
             </div>
+        </div>
+    );
+};
+
+const AmbassadorCard = ({ student, t }) => {
+    // Resolve the ambassador photo path
+    const ambassadorPhoto = useMemo(() => {
+        if (!student.photo) return null;
+        try {
+            return new URL(`../assets/ambassadors/${student.photo}`, import.meta.url).href;
+        } catch (e) {
+            return null;
+        }
+    }, [student.photo]);
+
+    const [imgError, setImgError] = useState(false);
+
+    return (
+        <div className="student-card">
+            <div className="student-avatar">
+                {ambassadorPhoto && !imgError ? (
+                    <img
+                        src={ambassadorPhoto}
+                        alt={student.name}
+                        className="ambassador-img"
+                        onError={() => setImgError(true)}
+                    />
+                ) : (
+                    <User size={40} color="var(--color-primary)" />
+                )}
+            </div>
+            <h3 className="student-name">{student.name}</h3>
+            <span className="student-year">{t.meetUs[`year${student.year}`]} Ambassador</span>
+            <p className="student-bio">{student.bio}</p>
+
+            {student.email && (
+                <a href={`mailto:${student.email}`} className="student-contact-btn">
+                    <Mail size={16} />
+                    {t.pt ? "Contactar" : "Contact"}
+                </a>
+            )}
         </div>
     );
 };

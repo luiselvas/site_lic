@@ -27,12 +27,13 @@ To launch the website locally, follow these steps:
 The website is built to be easily updated without touching any complex code.
 
 ### 1. Students & Ambassadors
-- Data is managed in: [students.js](file:///Users/luiselvas/Documents/site_lic/src/data/students.js)
-- Ambassadors are current representatives. Add them to the `students` array:
+- **Configuration File**: All data is managed in [students.js](file:///Users/luiselvas/Documents/site_lic/src/data/students.js).
+- **Ambassadors**: Add current representatives to the `students` array:
   ```javascript
-  { id: 11, name: "Name", year: 1, bio: "Bio...", email: "email@iscte-iul.pt" }
+  { id: 11, name: "Name", year: 1, bio: "Bio...", email: "email@iscte-iul.pt", photo: "filename.jpg" }
   ```
-- No `lectiveYear` is needed for students; they will appear for their specific enrollment year (1, 2, or 3) regardless of which historical photo is being viewed.
+- **Photos**: Place all ambassador images in the `src/assets/ambassadors/` folder. Reference the filename exactly in the `photo` field above.
+- **Fallbacks**: If a `photo` is missing or the file cannot be found, the site will automatically display a default user icon.
 
 ### 2. New Academic Years
 - **Media**: Create a folder in `src/assets/academic-years/` (e.g., `2025-2026`).
