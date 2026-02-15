@@ -293,4 +293,38 @@
     color: var(--color-gray-700);
     line-height: 1.6;
     font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.student-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    margin-top: auto;
+}
+
+.student-contact-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.2);
+}
+
+.student-contact-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.student-contact-btn:hover svg {
+    transform: scale(1.1);
 }

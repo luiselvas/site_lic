@@ -30,7 +30,7 @@ The website is built to be easily updated without touching any complex code.
 - Data is managed in: [students.js](file:///Users/luiselvas/Documents/site_lic/src/data/students.js)
 - Ambassadors are current representatives. Add them to the `students` array:
   ```javascript
-  { id: 11, name: "Name", year: 1, bio: "Bio..." }
+  { id: 11, name: "Name", year: 1, bio: "Bio...", email: "email@iscte-iul.pt" }
   ```
 - No `lectiveYear` is needed for students; they will appear for their specific enrollment year (1, 2, or 3) regardless of which historical photo is being viewed.
 

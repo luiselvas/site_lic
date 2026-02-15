@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { GraduationCap, User, Calendar, ChevronDown } from 'lucide-react';
+import { GraduationCap, User, Calendar, ChevronDown, Mail } from 'lucide-react';
 import './MeetUs.css';
 import { students, academicYears } from '../data/students';
 
@@ -117,6 +117,13 @@ const MeetUs = () => {
                                 <h3 className="student-name">{student.name}</h3>
                                 <span className="student-year">{t.meetUs[`year${student.year}`]} Ambassador</span>
                                 <p className="student-bio">{student.bio}</p>
+
+                                {student.email && (
+                                    <a href={`mailto:${student.email}`} className="student-contact-btn">
+                                        <Mail size={16} />
+                                        {t.pt ? "Contactar" : "Contact"}
+                                    </a>
+                                )}
                             </div>
                         ))
                     ) : (
