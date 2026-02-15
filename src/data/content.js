@@ -57,7 +57,8 @@ export const content = {
       title: "Conhece os Nossos Estudantes",
       year1: "1º Ano",
       year2: "2º Ano",
-      year3: "3º Ano"
+      year3: "3º Ano",
+      academicYear: "Ano Letivo"
     },
     community: {
       title: "A Nossa Comunidade",
@@ -137,7 +138,8 @@ export const content = {
       title: "Meet Our Students",
       year1: "1st Year",
       year2: "2nd Year",
-      year3: "3rd Year"
+      year3: "3rd Year",
+      academicYear: "Academic Year"
     },
     community: {
       title: "Our Community",

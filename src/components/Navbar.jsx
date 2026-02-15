@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Globe, Menu, X } from 'lucide-react';
 import './Navbar.css';
-import logoPt from '../assets/logo-pt-black.png';
-import logoEn from '../assets/logo-en-black.png';
+import logoPt from '../assets/ui/logo-pt-black.png';
+import logoEn from '../assets/ui/logo-en-black.png';
 
 const Navbar = () => {
     const { t, language, toggleLanguage } = useLanguage();

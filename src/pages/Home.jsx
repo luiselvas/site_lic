@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { ArrowRight, CheckCircle, Zap, Quote } from 'lucide-react';
 import SocialGrid from '../components/SocialGrid';
 import './Home.css';
-import heroBg from '../assets/hero-bg.png';
+import heroBg from '../assets/ui/hero-bg.png';
 
 const Home = () => {
     const { t } = useLanguage();
